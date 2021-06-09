@@ -8,7 +8,7 @@ namespace Library.Data.EF.Model
 {
     public class Borrowing : Entity
     {
-        public virtual Member Member { get; }
+        public virtual Member CurrentBorrower { get; }
         public virtual Book Book { get; }
         public DateTime Date { get; }
 
@@ -16,10 +16,10 @@ namespace Library.Data.EF.Model
         {
         }
 
-        public Borrowing(Member member, Book book, DateTime date)
+        public Borrowing(Member currentBorrower, Book book, DateTime date)
             : this()
         {
-            Member = member;
+            CurrentBorrower = currentBorrower;
             Book = book;
             Date = date;
         }

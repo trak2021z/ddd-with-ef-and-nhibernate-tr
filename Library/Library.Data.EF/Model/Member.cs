@@ -11,7 +11,7 @@ namespace Library.Data.EF.Model
     {
         public virtual Name Name { get; private set; }
         public Email Email { get; private set; }
-        public virtual Book CurrentyReadBook { get; private set; }
+        public virtual Book FavoriteBook{ get; private set; }
 
         private readonly List<Borrowing> _borrowings = new();
         public virtual IReadOnlyList<Borrowing> Borrowings => _borrowings.ToList();
@@ -21,12 +21,12 @@ namespace Library.Data.EF.Model
         }
 
         public Member(
-            Name name, Email email, Book currentyReadBook)
+            Name name, Email email, Book favoriteBook)
             : this()
         {
             Name = name;
             Email = email;
-            CurrentyReadBook = currentyReadBook;
+            FavoriteBook = favoriteBook;
         }
 
         public Result BorrowBook(Book book)
