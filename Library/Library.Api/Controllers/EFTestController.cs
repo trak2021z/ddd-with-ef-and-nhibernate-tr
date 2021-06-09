@@ -11,12 +11,8 @@ namespace Library.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TestController : ControllerBase
+    public class EFTestController : ControllerBase
     {
-        public TestController()
-        {
-        }
-
         [HttpGet]
         public IActionResult Get()
         {
