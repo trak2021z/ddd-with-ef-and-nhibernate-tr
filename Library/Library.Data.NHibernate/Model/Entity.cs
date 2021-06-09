@@ -62,7 +62,7 @@ namespace Library.Data.NHibernate.Model
         {
             Type type = GetType();
 
-            if (type.ToString().Contains("Castle.Proxies."))
+            if (type.ToString().Contains("NHibernate.Proxy.DynamicProxy."))
                 return type.BaseType;
 
             return type;
