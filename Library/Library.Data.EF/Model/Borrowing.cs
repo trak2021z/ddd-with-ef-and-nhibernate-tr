@@ -8,9 +8,9 @@ namespace Library.Data.EF.Model
 {
     public class Borrowing : Entity
     {
-        public virtual Member CurrentBorrower { get; }
-        public virtual Book Book { get; }
-        public DateTime Date { get; }
+        public virtual Member CurrentBorrower { get; private set; }
+        public virtual Book Book { get; private set; }
+        public DateTime Date { get; private set; }
 
         protected Borrowing()
         {

@@ -12,6 +12,10 @@ namespace Library.Data.EF.Model
     {
         public string Value { get; }
 
+        protected Email()
+        {
+        }
+
         private Email(string value)
         {
             Value = value;

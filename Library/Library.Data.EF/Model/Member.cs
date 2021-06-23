@@ -11,7 +11,7 @@ namespace Library.Data.EF.Model
     {
         public virtual Name Name { get; private set; }
         public Email Email { get; private set; }
-        public virtual Book FavoriteBook{ get; private set; }
+        public virtual Book FavoriteBook { get; private set; }
 
         private readonly List<Borrowing> _borrowings = new();
         public virtual IReadOnlyList<Borrowing> Borrowings => _borrowings.ToList();
@@ -31,8 +31,11 @@ namespace Library.Data.EF.Model
 
         public Result BorrowBook(Book book)
         {
-            if (_borrowings.Count <= 5)
-                return Result.Failure($"Can not borrow more than 5 books");
+            if(book == null)
+                throw new ArgumentNullException(nameof(book));
+
+            if (_borrowings.Count >= 3)
+                return Result.Failure($"Can not borrow more than 3 books");
 
             var borrowing = new Borrowing(this, book, DateTime.Now);
             _borrowings.Add(borrowing);
@@ -48,6 +51,12 @@ namespace Library.Data.EF.Model
                 return;
 
             _borrowings.Remove(borrowing);
+        }
+
+        public void UpdateFavoriteBook(Book favoriteBook)
+        {
+            FavoriteBook = favoriteBook 
+                ?? throw new ArgumentNullException(nameof(favoriteBook));
         }
     }
 }

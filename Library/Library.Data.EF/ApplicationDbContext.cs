@@ -10,8 +10,9 @@ namespace Library.Data.EF
     public sealed class ApplicationDbContext : DbContext
     {
         private static readonly Type[] EnumerationTypes = { typeof(Book), typeof(Suffix) };
-        public DbSet<Member> Students { get; set; }
-        public DbSet<Book> Courses { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -58,6 +59,7 @@ namespace Library.Data.EF
                     p.Property(pp => pp.Last).HasColumnName("LastName");
                     p.HasOne(pp => pp.Suffix).WithMany().HasForeignKey("NameSuffixId").IsRequired(false);
                 });
+                x.HasMany(p => p.Categories).WithMany(p => p.Books);
             });
             modelBuilder.Entity<Borrowing>(x =>
             {
@@ -66,6 +68,13 @@ namespace Library.Data.EF
                 x.HasOne(p => p.CurrentBorrower).WithMany(p => p.Borrowings);
                 x.HasOne(p => p.Book).WithMany();
                 x.Property(p => p.Date);
+            });
+            modelBuilder.Entity<Category>(x =>
+            {
+                x.ToTable("Categories").HasKey(k => k.Id);
+                x.Property(p => p.Id);
+                x.Property(p => p.Name);
+                x.HasMany(p => p.Books).WithMany(p => p.Categories);
             });
         }
 

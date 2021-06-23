@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Data.EF", "Library.Data.EF\Library.Data.EF.csproj", "{BB45AD1D-8648-4BB4-B519-9DA80DD37733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Data.EF", "Library.Data.EF\Library.Data.EF.csproj", "{BB45AD1D-8648-4BB4-B519-9DA80DD37733}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Data.NHibernate", "Library.Data.NHibernate\Library.Data.NHibernate.csproj", "{3AEC8CC1-CB4F-4AE0-B936-7D6264136BE9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Api", "Library.Api\Library.Api.csproj", "{5371426C-D996-4EC1-B56B-5501AD8260CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Api", "Library.Api\Library.Api.csproj", "{5371426C-D996-4EC1-B56B-5501AD8260CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{BB45AD1D-8648-4BB4-B519-9DA80DD37733}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB45AD1D-8648-4BB4-B519-9DA80DD37733}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB45AD1D-8648-4BB4-B519-9DA80DD37733}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AEC8CC1-CB4F-4AE0-B936-7D6264136BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AEC8CC1-CB4F-4AE0-B936-7D6264136BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AEC8CC1-CB4F-4AE0-B936-7D6264136BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AEC8CC1-CB4F-4AE0-B936-7D6264136BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5371426C-D996-4EC1-B56B-5501AD8260CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5371426C-D996-4EC1-B56B-5501AD8260CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5371426C-D996-4EC1-B56B-5501AD8260CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
